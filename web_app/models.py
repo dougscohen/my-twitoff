@@ -1,11 +1,15 @@
 # web_app/models.py
 
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-db = SQLAlchemy()
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///web_app_tweets.db"
 
-migrate = Migrate()
+db = SQLAlchemy(app)
+
+migrate = Migrate(app, db)
 
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True)

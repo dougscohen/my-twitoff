@@ -1,6 +1,7 @@
 <!-- web_app/templates/new_tweet.html -->
 
 {% extends "layout.html" %}
+{% set active_page = "new_tweet" %}
 
 {% block content %}
 
@@ -8,7 +9,7 @@
 
     <p>Please fill out the form and submit to create a new book!</p>
 
-    <form action="/tweets/create" method="POST">
+    <form action="/tweets/create" method="post">
 
         <label>Content:</label>
         <input type="text" name="tweet_content" placeholder="insert tweet here" value="insert tweet here">

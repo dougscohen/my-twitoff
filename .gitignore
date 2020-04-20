@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Misc
-migrations
 .vscode/
+migrations
 

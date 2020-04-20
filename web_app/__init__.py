@@ -10,8 +10,8 @@ from web_app.routes.tweet_routes import tweet_routes
 def create_app():
     app = Flask(__name__)
 
-    # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///web_app_tweets.db"
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users\\dougcohen\\Repos\\Unit-3\\my-twitoff-13\\web_app\\web_app_tweets.db"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///web_app_tweets.db"
+    # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users\\dougcohen\\Repos\\Unit-3\\my-twitoff-13\\web_app\\web_app_tweets.db"
     db.init_app(app)
     migrate.init_app(app, db)
 

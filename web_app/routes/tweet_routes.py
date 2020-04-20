@@ -35,7 +35,7 @@ def create_tweet():
     print("FORM DATA:", dict(request.form))
     # todo: store in database
     # INSERT INTO tweets ...
-    new_tweet = Tweet(content=request.form["tweet_content"], user_id=request.form["user_handle"])
+    new_tweet = Tweet(tweet=request.form["tweet_content"], user_handle=request.form["user_handle"])
     db.session.add(new_tweet)
     db.session.commit()
     
@@ -43,5 +43,5 @@ def create_tweet():
     #     "message": "BOOK CREATED OK (TODO)",
     #     "book": dict(request.form)
     # })
-    # flash(f"Book '{new_book.title}' created successfully!", "success")
+    flash(f"Tweet '{new_tweet.tweet_content}' created successfully!", "success")
     return redirect(f"/tweets")
